@@ -28,6 +28,9 @@ async function checkFileExistence(path) {
         console.log(status);
         console.log(message);
         console.log(data[0].employee_name);
+        data.forEach(element => {
+            console.log(element.employee_name);
+        });
         //checkFileExistence("README.md");
         //checkFileExistence("LICENSE");
         
