@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 import core from '@actions/core';
 import github from '@actions/github';
 import fs from "fs";
-import {connected} from 'process';
+import connected from 'process';
 //const core = require('@actions/core');
 //const github = require('@actions/github');
 //const fs = require("fs");
