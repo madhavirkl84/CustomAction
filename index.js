@@ -1,7 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require("fs");
-const fetch = require('node-fetch');
 const { connected } = require('process');
 
 async function checkFileExistence(path) {
@@ -18,13 +17,13 @@ async function checkFileExistence(path) {
 
 (async () => {
     try {
-   
+        const fetch = require("node-fetch");
         const url = "https://dummy.restapiexample.com/api/v1/employees";
         const response = await fetch(url);
         const {results} = await response.json();
         Console.console.log(results);
-        checkFileExistence("README.md");
-        checkFileExistence("LICENSE");
+        //checkFileExistence("README.md");
+        //checkFileExistence("LICENSE");
         
     } catch (error) {
         core.setFailed(error.message);
