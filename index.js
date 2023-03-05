@@ -1,3 +1,4 @@
+import fetch from "node-fetch";
 const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require("fs");
@@ -17,7 +18,6 @@ async function checkFileExistence(path) {
 
 (async () => {
     try {
-        const fetch = require("node-fetch");
         const url = "https://dummy.restapiexample.com/api/v1/employees";
         const response = await fetch(url);
         const {results} = await response.json();
