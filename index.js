@@ -1,8 +1,12 @@
 import fetch from "node-fetch";
-const core = require('@actions/core');
-const github = require('@actions/github');
-const fs = require("fs");
-const { connected } = require('process');
+import core from '@actions/core';
+import github from '@actions/github';
+import fs from "fs";
+import {connected} from 'process';
+//const core = require('@actions/core');
+//const github = require('@actions/github');
+//const fs = require("fs");
+//const { connected } = require('process');
 
 async function checkFileExistence(path) {
     return fs.promises.access(path, fs.constants.F_OK)
