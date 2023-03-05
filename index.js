@@ -24,8 +24,10 @@ async function checkFileExistence(path) {
     try {
         const url = "https://dummy.restapiexample.com/api/v1/employees";
         const response = await fetch(url);
-        const {data} = await response.json();
-        console.log(data);
+        const {status, data, message} = await response.json();
+        console.log(status);
+        console.log(message);
+        console.log(data[0].employee_name);
         //checkFileExistence("README.md");
         //checkFileExistence("LICENSE");
         
