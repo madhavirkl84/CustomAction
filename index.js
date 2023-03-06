@@ -59,5 +59,6 @@ async function checkFileExistence(path) {
         
     } catch (error) {
         core.setFailed(error.message);
+        alert("Please review it with QM Team");
     }
 })();
