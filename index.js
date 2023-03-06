@@ -31,7 +31,21 @@ async function checkFileExistence(path) {
         data.forEach(element => {
             console.log("Name " , element.employee_name, "Age " ,element.employee_age);
         });
-        console.dir(data);
+        //console.dir(data);
+
+        var key;
+        var dataSorted = []; // Create an empty array
+
+        for (key in data) {  // Iterate through each key of the JSON data
+        dataSorted.push(key);
+        }
+        dataSorted.sort();
+        for (var i = 0; i < dataSorted.length; i++) {
+            var key = dataSorted[i];
+            // Now you do whatever you need with sorted data. eg:
+            console.log("Key is: " + key + ", value is: " + data[key]);
+          }
+
         //checkFileExistence("README.md");
         //checkFileExistence("LICENSE");
         
