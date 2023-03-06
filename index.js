@@ -31,7 +31,19 @@ async function checkFileExistence(path) {
         data.forEach(element => {
             var keys = Object.keys(element);
             for (let i = 0; i < keys.length; i++) {
-                console.log(keys[i], " : ", element[keys[i]]);
+                var key = keys[i];
+                console.log(key, " : ", element[key]);
+            }
+        //console.log(element.key, ", ", element.value);
+        });
+
+        data.forEach(elementCheck => {
+            var keys = Object.keys(elementCheck);
+            for (let i = 0; i < keys.length; i++) {
+                var key = keys[i];
+                if(elementCheck[key] <=30){
+                console.log(key, " : ", elementCheck[key]);
+                 }
             }
         //console.log(element.key, ", ", element.value);
         });
