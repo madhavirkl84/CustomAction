@@ -48,7 +48,7 @@ async function checkFileExistence(path) {
                     console.log(key, " : ", employee[key]);
                 }
             } else {
-                console.log(employee.employee_name);
+                console.log("Name :"employee.employee_name);
             }
         //console.log(element.key, ", ", element.value);
         });
