@@ -33,6 +33,7 @@ async function checkFileExistence(path) {
         });
 
         data.forEach(element => {
+        element = element.replace(/[{}]/g, "");
         console.dir(element);
         });
         //checkFileExistence("README.md");
