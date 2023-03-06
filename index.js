@@ -44,6 +44,9 @@ async function checkFileExistence(path) {
                 if(elementCheck[key] <=30){
                 console.log(key, " : ", elementCheck[key]);
                  }
+                 else{
+                   console.log(key , "EMP Above 30") 
+                 }
             }
         //console.log(element.key, ", ", element.value);
         });
