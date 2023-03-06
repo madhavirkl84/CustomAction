@@ -38,17 +38,17 @@ async function checkFileExistence(path) {
         //console.log(element.key, ", ", element.value);
         });
 
-        data.forEach(elementCheck => {
-            var keys = Object.keys(elementCheck);
-            console.log("Header")
-            for (let i = 0; i < keys.length; i++) {
-                var key = keys[i];
-                if(elementCheck[key] <=30){
-                console.log(key, " : ", elementCheck[key]);
-                 }
-                 else{
-                   console.log(elementCheck.employee_name); 
-                 }
+        console.log("Employee Details");
+        data.forEach(employee => {
+            var keys = Object.keys(employee);
+
+            if(employee["employee_age"] <=30){
+                for (let i = 0; i < keys.length; i++) {
+                    var key = keys[i];
+                    console.log(key, " : ", element[key]);
+                }
+            } else {
+                console.log(employee.employee_name);
             }
         //console.log(element.key, ", ", element.value);
         });
