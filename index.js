@@ -30,8 +30,8 @@ async function checkFileExistence(path) {
         console.log(data[0].employee_name);
         data.forEach(element => {
             console.log("Name " , element.employee_name, "Age " ,element.employee_age);
-            console.log(data);
         });
+        console.log(data);
         //checkFileExistence("README.md");
         //checkFileExistence("LICENSE");
         
