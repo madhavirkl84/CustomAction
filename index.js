@@ -29,9 +29,12 @@ async function checkFileExistence(path) {
         console.log(message);
         console.log(data[0].employee_name);
         data.forEach(element => {
-        console.log("Name " , element.employee_name, "Age " ,element.employee_age);
+        console.log("Name: " , element.employee_name, ", Age: " ,element.employee_age);
         });
-        //console.dir(data);
+
+        data.forEach(element => {
+        console.dir(element);
+        });
         //checkFileExistence("README.md");
         //checkFileExistence("LICENSE");
         
