@@ -45,7 +45,7 @@ async function checkFileExistence(path) {
             if(employee["employee_age"] <=30){
                 for (let i = 0; i < keys.length; i++) {
                     var key = keys[i];
-                    console.log(key, " : ", element[key]);
+                    console.log(key, " : ", employee[key]);
                 }
             } else {
                 console.log(employee.employee_name);
