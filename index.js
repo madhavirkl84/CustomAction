@@ -3,6 +3,7 @@ import core from '@actions/core';
 import github from '@actions/github';
 import fs from "fs";
 import connected from 'process';
+import { Console } from "console";
 //const core = require('@actions/core');
 //const github = require('@actions/github');
 //const fs = require("fs");
@@ -39,6 +40,7 @@ async function checkFileExistence(path) {
 
         data.forEach(elementCheck => {
             var keys = Object.keys(elementCheck);
+            console.log("Header")
             for (let i = 0; i < keys.length; i++) {
                 var key = keys[i];
                 if(elementCheck[key] <=30){
