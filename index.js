@@ -54,7 +54,7 @@ async function checkFileExistence(path) {
         });
 
         //checkFileExistence("README.md");
-        checkFileExistence("CheckNew.txt");
+        checkFileExistence("newTest");
         //checkFileExistence("LICENSE");
         
     } catch (error) {
