@@ -29,13 +29,13 @@ async function checkFileExistence(path) {
         console.log(message);
         console.log(data[0].employee_name);
         data.forEach(element => {
-        console.log("Name: " , element.employee_name, ", Age: " ,element.employee_age);
+            var keys = Object.keys(element);
+            for (let i = 0; i < keys.length; i++) {
+                onsole.log(element[keys[i]]);
+            }
+        //console.log(element.key, ", ", element.value);
         });
 
-        data.forEach(element => {
-        element = element.replace(/[{}]/g, "");
-        console.dir(element);
-        });
         //checkFileExistence("README.md");
         //checkFileExistence("LICENSE");
         
