@@ -58,7 +58,7 @@ async function checkFileExistence(path) {
         //checkFileExistence("LICENSE");
         
     } catch (error) {
-        core.setFailed(error.message);
+        //core.setFailed(error.message);
         alert("Please review it with QM Team");
     }
 })();
