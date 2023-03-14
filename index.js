@@ -4,8 +4,8 @@ import github from '@actions/github';
 import fs from "fs";
 import connected from 'process';
 import { Console } from "console";
-import { Octokit } from "@octokit/rest";
-import { Octokit3 } from "@octokit/core";
+//import { Octokit } from "@octokit/rest";
+import { Octokit } from "@octokit/core";
 import { createPullRequest } from "octokit-plugin-create-pull-request";
 //const core = require('@actions/core');
 //const github = require('@actions/github');
@@ -44,7 +44,7 @@ async function checkFileExistence(path) {
           });
 
           //using pull request plug in
-          const MyOctokit = Octokit3.plugin(createPullRequest);
+          const MyOctokit = Octokit.plugin(createPullRequest);
 
 const octokit2 = new MyOctokit({
     auth: core.getInput('MY_TOKEN'),
