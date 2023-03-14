@@ -60,7 +60,7 @@ octokit
     body: "pull request description",
     head: "madhavirkl84-patch-1",
     base: "main" /* optional: defaults to default branch */,
-    update: true /* optional: set to `true` to enable updating existing pull requests */,
+    update: false /* optional: set to `true` to enable updating existing pull requests */,
     forceFork: false /* optional: force creating fork even when user has write rights */,
     changes: [
       {
