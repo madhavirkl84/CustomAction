@@ -23,11 +23,11 @@ async function checkFileExistence(path) {
 
 (async () => {
 
-    const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
+    const GITHUB_TOKEN = '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';// core.getInput('GITHUB_TOKEN');
     const octokit = github.getOctokit(GITHUB_TOKEN);
     const {context = {}} = github;
 
-    console.log('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');
+    console.log(GITHUB_TOKEN);
     console.log(context);
 
     await octokit.rest.pulls.create({            
