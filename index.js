@@ -27,7 +27,7 @@ async function checkFileExistence(path) {
     //const GITHUB_TOKEN = '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';// core.getInput('GITHUB_TOKEN');
     //const octokit = github.getOctokit(GITHUB_TOKEN);
 
-    //const MY_TOKEN = core.getInput('MY_TOKEN');
+    const MY_TOKEN = core.getInput('MY_TOKEN');
     //console.log(MY_TOKEN);
 
     //const octokit = github.getOctokit('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');
@@ -37,7 +37,7 @@ async function checkFileExistence(path) {
     //console.log(context);
     try {
         const octokit = new Octokit({
-            auth: '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'
+            auth: process.env.GITHUB_ACCESS_TOKEN
           });
 
         await octokit.pulls.create({            
