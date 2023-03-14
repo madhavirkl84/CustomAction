@@ -71,12 +71,12 @@ octokit2
   })
   .then((pr) => console.log(pr.data.number));
 
-        const response = await octokit.pulls.get({
-            owner: 'madhavirkl84',
-            repo: 'CustomAction',
-            pull_number: 1
-        }); 
-        console.log(response);
+        //const response = await octokit.pulls.get({
+        //    owner: 'madhavirkl84',
+        //    repo: 'CustomAction',
+        //    pull_number: 1
+        //}); 
+        //console.log(response);
 
         let response2 = await octokit.request('POST /repos/madhavirkl84/CustomAction/pulls', {
             owner: 'madhavirkl84',
