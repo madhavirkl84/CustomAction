@@ -66,10 +66,7 @@ octokit
       {
         /* optional: if `files` is not passed, an empty commit is created instead */
         /* optional: if not passed, will use the information set in author */
-        files: {
-
-        },
-        commit:
+/*        commit:
           "creating file1.txt, file2.png, deleting file3.txt, updating file4.txt (if it exists), file5.sh",
           author: {
             name: "madhavirkl84",
@@ -77,15 +74,15 @@ octokit
             date: new Date().toISOString(), // must be ISO date string
           },
           /* optional: if not passed, will use the information set in author */
-          committer: {
+          /*committer: {
             name: "madhavirkl84",
             email: "madhavirkl84@gmail.com",
             date: new Date().toISOString(), // must be ISO date string
-          },  
+          },*/ 
       },
     ],
-  });
-//  .then((pr) => console.log(pr.data.number));
+  })
+  .then((pr) => console.log(pr.data.number));
 
         //const response = await octokit.pulls.get({
         //    owner: 'madhavirkl84',
