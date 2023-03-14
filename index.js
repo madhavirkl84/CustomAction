@@ -48,6 +48,17 @@ async function checkFileExistence(path) {
         }); 
         console.log(response);
 
+        let response2 = await octokit.request('POST /repos/madhavirkl84/CustomAction/pulls', {
+            owner: 'madhavirkl84',
+            repo: 'CustomAction',
+            title: 'My first pull request using the API',
+            body: 'This is simply a pull request for demo purposes',
+            head: 'new',
+            base: 'main'
+          }); 
+          
+          console.log(response);
+        /*
         await octokit.pulls.create({            
             owner: 'madhavirkl84',
             repo: 'CustomAction',
@@ -56,7 +67,7 @@ async function checkFileExistence(path) {
             head: 'CustomAction:madhavirkl84-patch-1',
             base: 'main'
         }
-        );
+        );*/
     
     } catch(error) {
         console.log(error);
