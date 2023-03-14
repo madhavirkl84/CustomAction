@@ -23,38 +23,29 @@ async function checkFileExistence(path) {
 
 (async () => {
 
-    const GITHUB_TOKEN = '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';// core.getInput('GITHUB_TOKEN');
-    const octokit = github.getOctokit(GITHUB_TOKEN);
+    //const GITHUB_TOKEN = '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';// core.getInput('GITHUB_TOKEN');
+    //const octokit = github.getOctokit(GITHUB_TOKEN);
+
+    const MY_TOKEN = core.getInput('MY_TOKEN');
+    console.log(MY_TOKEN);
+
+    const octokit = github.getOctokit(MY_TOKEN);
+
     const {context = {}} = github;
 
-    console.log(GITHUB_TOKEN);
     console.log(context);
 
     await octokit.rest.pulls.create({            
-        owner: context.owner,
-        repo: context.repo,
-        head: context.head,
-        base: context.base
+        owner: 'madhavirkl84',
+        repo: 'CustomActionTest',
+        head: 'main',
+        base: 'main',
+        title: 'My First PR from app'
     }
     );
 
     try {
         //await github.context.
-
-        const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
-        const octokit = github.getOctokit(GITHUB_TOKEN);
-        const {context = {}} = github;
-
-        console.log(GITHUB_TOKEN);
-        console.log(context.repo);
-
-        await octokit.rest.pulls.create({            
-            owner: context.owner,
-            repo: context.repo,
-            head: context.head,
-            base: context.base
-        }
-        );
 
         const url = "https://dummy.restapiexample.com/api/v1/employees";
         const response = await fetch(url);
