@@ -41,6 +41,12 @@ async function checkFileExistence(path) {
             auth: core.getInput('MY_TOKEN')
           });
 
+        await octokit.pulls.get({
+            owner: 'madhavirkl84',
+            repo: 'CustomAction',
+            pull_number: 1
+        }); 
+
         await octokit.pulls.create({            
             owner: 'madhavirkl84',
             repo: 'CustomAction',
