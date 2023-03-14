@@ -39,20 +39,20 @@ async function checkFileExistence(path) {
     //console.log(context);
     try {
         //const octokit = new Octokit();
-        const octokit = new Octokit({
-            auth: core.getInput('MY_TOKEN')
-          });
+//        const octokit = new Octokit({
+//            auth: core.getInput('MY_TOKEN')
+//          });
 
           //using pull request plug in
           const MyOctokit = Octokit.plugin(createPullRequest);
 
-const octokit2 = new MyOctokit({
+const octokit = new MyOctokit({
     auth: core.getInput('MY_TOKEN'),
 });
 
 // Returns a normal Octokit PR response
 // See https://octokit.github.io/rest.js/#octokit-routes-pulls-create
-octokit2
+octokit
   .createPullRequest({
     owner: "madhavirkl84",
     repo: "CustomAction",
@@ -80,7 +80,7 @@ octokit2
         //}); 
         //console.log(response);
 
-        let response2 = await octokit.request('POST /repos/madhavirkl84/CustomAction/pulls', {
+/*        let response2 = await octokit.request('POST /repos/madhavirkl84/CustomAction/pulls', {
             owner: 'madhavirkl84',
             repo: 'CustomAction',
             title: 'My first pull request using the API',
