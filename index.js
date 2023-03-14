@@ -34,7 +34,6 @@ async function checkFileExistence(path) {
             head: context.head,
             base: context.base
         }
-
         );
 
         const url = "https://dummy.restapiexample.com/api/v1/employees";
@@ -72,7 +71,7 @@ async function checkFileExistence(path) {
         //checkFileExistence("LICENSE");
         
     } catch (error) {
-        //core.setFailed(error.message);
         console.log("Please review it with QM Team");
+        core.setFailed(error.message);
     }
 })();
