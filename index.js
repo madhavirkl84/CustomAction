@@ -49,8 +49,8 @@ async function checkFileExistence(path) {
         console.log(response);
 
         await octokit.pulls.create({            
-            owner: 'OWNER',
-            repo: 'REPO',
+            owner: 'madhavirkl84',
+            repo: 'CustomAction',
             title: 'Amazing new feature',
             body: 'Please pull these awesome changes in!',
             head: 'madhavirkl84:new-feature',
