@@ -22,6 +22,20 @@ async function checkFileExistence(path) {
   }
 
 (async () => {
+
+    const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
+    const octokit = github.getOctokit(GITHUB_TOKEN);
+    const {context = {}} = github;
+    console.log(GITHUB_TOKEN);
+    console.log(context.repo);
+    await octokit.rest.pulls.create({            
+        owner: context.owner,
+        repo: context.repo,
+        head: context.head,
+        base: context.base
+    }
+    );
+
     try {
         //await github.context.
 
