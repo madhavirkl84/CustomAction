@@ -37,7 +37,7 @@ async function checkFileExistence(path) {
     //console.log(context);
     const octokit = new Octokit();
 
-    await octokit.rest.pulls.create({            
+    await octokit.pulls.create({            
         owner: 'madhavirkl84',
         repo: 'CustomActionTest',
         head: 'main',
