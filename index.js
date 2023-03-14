@@ -4,6 +4,7 @@ import github from '@actions/github';
 import fs from "fs";
 import connected from 'process';
 import { Console } from "console";
+import { Octokit } from "@octokit/rest";
 //const core = require('@actions/core');
 //const github = require('@actions/github');
 //const fs = require("fs");
@@ -26,14 +27,16 @@ async function checkFileExistence(path) {
     //const GITHUB_TOKEN = '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';// core.getInput('GITHUB_TOKEN');
     //const octokit = github.getOctokit(GITHUB_TOKEN);
 
-    const MY_TOKEN = core.getInput('MY_TOKEN');
-    console.log(MY_TOKEN);
+    //const MY_TOKEN = core.getInput('MY_TOKEN');
+    //console.log(MY_TOKEN);
 
-    const octokit = github.getOctokit('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');
+    //const octokit = github.getOctokit('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');
 
-    const {context = {}} = github;
+    //const {context = {}} = github;
 
-    console.log(context);
+    //console.log(context);
+    const octokit = new Octokit();
+
     await octokit.rest.pulls.create({            
         owner: 'madhavirkl84',
         repo: 'CustomActionTest',
