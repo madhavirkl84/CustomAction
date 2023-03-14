@@ -43,7 +43,7 @@ async function checkFileExistence(path) {
 
         await octokit.pulls.create({            
             owner: 'madhavirkl84',
-            repo: 'CustomActionTest',
+            repo: 'CustomAction',
             head: 'main',
             base: 'main',
             title: 'My First PR from app'
