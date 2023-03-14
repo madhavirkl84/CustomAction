@@ -53,7 +53,7 @@ async function checkFileExistence(path) {
             repo: 'CustomAction',
             title: 'Amazing new feature',
             body: 'Please pull these awesome changes in!',
-            head: 'madhavirkl84:new-feature',
+            head: 'madhavirkl84:madhavirkl84-patch-1',
             base: 'main'
         }
         );
