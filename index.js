@@ -49,11 +49,15 @@ async function checkFileExistence(path) {
         console.log(response);
 
         await octokit.pulls.create({            
-            owner: 'madhavirkl84',
-            repo: 'CustomAction',
-            head: 'main',
+            owner: 'OWNER',
+            repo: 'REPO',
+            title: 'Amazing new feature',
+            body: 'Please pull these awesome changes in!',
+            head: 'madhavirkl84:new-feature',
             base: 'main',
-            title: 'My First PR from app'
+            headers: {
+              'X-GitHub-Api-Version': '2023-03-14'
+            }
         }
         );
     
