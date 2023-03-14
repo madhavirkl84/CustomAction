@@ -37,12 +37,12 @@ async function checkFileExistence(path) {
     //console.log(context);
     try {
         const octokit = new Octokit({
-            auth: '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'
+            auth: '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'
           });
 
         await octokit.pulls.create({            
             owner: 'madhavirkl84',
-            repo: 'CustomAction',
+            repo: 'CustomActionTest',
             head: 'main',
             base: 'main',
             title: 'My First PR from app'
