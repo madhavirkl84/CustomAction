@@ -61,7 +61,7 @@ octokit
     head: "madhavirkl84-patch-1",
     base: "main" /* optional: defaults to default branch */,
     update: true /* optional: set to `true` to enable updating existing pull requests */,
-    forceFork: true /* optional: force creating fork even when user has write rights */,
+    forceFork: false /* optional: force creating fork even when user has write rights */,
     changes: [
       {
         /* optional: if `files` is not passed, an empty commit is created instead */
@@ -72,14 +72,14 @@ octokit
         commit:
           "creating file1.txt, file2.png, deleting file3.txt, updating file4.txt (if it exists), file5.sh",
           author: {
-            name: "Author LastName",
-            email: "Author.LastName@acme.com",
+            name: "madhavirkl84",
+            email: "madhavirkl84@gmail.com",
             date: new Date().toISOString(), // must be ISO date string
           },
           /* optional: if not passed, will use the information set in author */
           committer: {
-            name: "Committer LastName",
-            email: "Committer.LastName@acme.com",
+            name: "madhavirkl84",
+            email: "madhavirkl84@gmail.com",
             date: new Date().toISOString(), // must be ISO date string
           },  
       },
