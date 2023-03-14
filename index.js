@@ -23,6 +23,20 @@ async function checkFileExistence(path) {
 
 (async () => {
     try {
+        //await github.context.
+
+        const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
+        const octokit = github.getOctokit(GITHUB_TOKEN);
+        const {context = {}} = github;
+        await octokit.rest.pulls.create({            
+            owner: context.owner,
+            repo: context.repo,
+            head: context.head,
+            base: context.base
+        }
+
+        );
+
         const url = "https://dummy.restapiexample.com/api/v1/employees";
         const response = await fetch(url);
         const {status, data, message} = await response.json();
