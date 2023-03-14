@@ -24,13 +24,13 @@ async function checkFileExistence(path) {
 
 (async () => {
 
-    //const GITHUB_TOKEN = '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';// core.getInput('GITHUB_TOKEN');
+    //const GITHUB_TOKEN = '';// core.getInput('GITHUB_TOKEN');
     //const octokit = github.getOctokit(GITHUB_TOKEN);
 
     const MY_TOKEN = core.getInput('MY_TOKEN');
     //console.log(MY_TOKEN);
 
-    //const octokit = github.getOctokit('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');
+    //const octokit = github.getOctokit('');
 
     //const {context = {}} = github;
 
