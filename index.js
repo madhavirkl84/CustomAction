@@ -60,8 +60,8 @@ octokit2
     body: "pull request description",
     head: "madhavirkl84-patch-1",
     base: "main" /* optional: defaults to default branch */,
-    update: false /* optional: set to `true` to enable updating existing pull requests */,
-    forceFork: false /* optional: force creating fork even when user has write rights */,
+    update: true /* optional: set to `true` to enable updating existing pull requests */,
+    forceFork: true /* optional: force creating fork even when user has write rights */,
     changes: [
       {
         /* optional: if `files` is not passed, an empty commit is created instead */
@@ -70,8 +70,8 @@ octokit2
           "creating file1.txt, file2.png, deleting file3.txt, updating file4.txt (if it exists), file5.sh",
       },
     ],
-  })
-  .then((pr) => console.log(pr.data.number));
+  });
+//  .then((pr) => console.log(pr.data.number));
 
         //const response = await octokit.pulls.get({
         //    owner: 'madhavirkl84',
