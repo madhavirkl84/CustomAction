@@ -54,10 +54,7 @@ async function checkFileExistence(path) {
             title: 'Amazing new feature',
             body: 'Please pull these awesome changes in!',
             head: 'madhavirkl84:new-feature',
-            base: 'main',
-            headers: {
-              'X-GitHub-Api-Version': '2023-03-14'
-            }
+            base: 'main'
         }
         );
     
