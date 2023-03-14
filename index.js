@@ -66,6 +66,8 @@ octokit2
       {
         /* optional: if `files` is not passed, an empty commit is created instead */
         /* optional: if not passed, will use the information set in author */
+        commit:
+          "creating file1.txt, file2.png, deleting file3.txt, updating file4.txt (if it exists), file5.sh",
       },
     ],
   })
