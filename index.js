@@ -35,16 +35,21 @@ async function checkFileExistence(path) {
     //const {context = {}} = github;
 
     //console.log(context);
-    const octokit = new Octokit();
+    try {
+        const octokit = new Octokit();
 
-    await octokit.pulls.create({            
-        owner: 'madhavirkl84',
-        repo: 'CustomActionTest',
-        head: 'main',
-        base: 'main',
-        title: 'My First PR from app'
+        await octokit.pulls.create({            
+            owner: 'madhavirkl84',
+            repo: 'CustomActionTest',
+            head: 'main',
+            base: 'main',
+            title: 'My First PR from app'
+        }
+        );
+    
+    } catch(error) {
+        console.log(error);
     }
-    );
 
     try {
         //await github.context.
