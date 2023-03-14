@@ -53,7 +53,7 @@ async function checkFileExistence(path) {
             repo: 'CustomAction',
             title: 'My first pull request using the API',
             body: 'This is simply a pull request for demo purposes',
-            head: 'madhavirkl84-patch-1',
+            head: 'CustomAction:madhavirkl84-patch-1',
             base: 'main'
           }); 
           
