@@ -47,7 +47,7 @@ async function checkFileExistence(path) {
           const MyOctokit = Octokit.plugin(createPullRequest);
 
 const octokit = new MyOctokit({
-    auth: core.getInput('MY_TOKEN'),
+    auth: process.env.GITHUB_TOKEN
 });
 
 // Returns a normal Octokit PR response
