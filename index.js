@@ -153,7 +153,15 @@ async function checkFileExistence(path) {
                     'madhavirkl84'
                   ], 
             });
-            console.log(response_assignee);
+            //console.log(response_assignee);
+            const response_reviewer = await octokit.pulls.requestReviewers({
+                owner: 'madhavirkl84',
+                repo: 'CustomAction',
+                pull_number: PR_Number,
+                reviewers:  [
+                    'SiyaaJhawar'
+                  ], 
+            });
 
 //octokit
 /*.createPullRequest({
