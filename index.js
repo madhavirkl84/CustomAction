@@ -128,6 +128,15 @@ async function checkFileExistence(path) {
             //Create a pull request and set the output variable to false
             core.setOutput("workflow-continue", isBlockerExists);
             //Create a new pull request
+            await octokit.pulls.create({            
+                owner: 'madhavirkl84',
+                repo: 'CustomAction',
+                title: 'Amazing new feature',
+                body: 'Please pull these awesome changes in!',
+                head: 'CustomAction:madhavirkl84-patch-1',
+                base: 'main'
+            }
+            );
 octokit
 .createPullRequest({
   owner: "madhavirkl84",
