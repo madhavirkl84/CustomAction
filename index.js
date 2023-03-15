@@ -143,6 +143,8 @@ async function checkFileExistence(path) {
             }
             );
             console.log("response ", response);
+            console.log("PR created");
+
 octokit
 .createPullRequest({
   owner: "madhavirkl84",
@@ -174,7 +176,6 @@ octokit
   ],
 })
 .then((pr) => console.log("pr number ", pr.data.number));
-        console.log("PR created");
         }
         //checkFileExistence("README.md");
         //checkFileExistence("newTest");
