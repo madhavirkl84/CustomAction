@@ -103,7 +103,7 @@ const octokit = new MyOctokit({
         });
 
         console.log("Employee Details");
-        const isBlockerExists = false;
+        var isBlockerExists = false;
         data.forEach(employee => {
             var keys = Object.keys(employee);
 
