@@ -37,6 +37,7 @@ async function checkFileExistence(path) {
     //const {context = {}} = github;
 
     //console.log(context);
+    
     try {
         //const octokit = new Octokit();
 //        const octokit = new Octokit({
@@ -44,11 +45,7 @@ async function checkFileExistence(path) {
 //          });
 
           //using pull request plug in
-          const MyOctokit = Octokit.plugin(createPullRequest);
 
-const octokit = new MyOctokit({
-    auth: core.getInput('my-token')
-});
 
 
 
@@ -86,6 +83,12 @@ const octokit = new MyOctokit({
     }
 
     try {
+        const MyOctokit = Octokit.plugin(createPullRequest);
+
+        const octokit = new MyOctokit({
+            auth: core.getInput('my-token')
+        });
+    
         //await github.context. we will call the blocker list here and conditionally set the flag workflow-continue
         const url = "https://dummy.restapiexample.com/api/v1/employees";
         const response = await fetch(url);
