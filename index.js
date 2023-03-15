@@ -112,13 +112,14 @@ async function checkFileExistence(path) {
 
             if(employee["employee_age"] <=30){
                 isBlockerExists = true;
+                console.log("isBlockerExists: ", isBlockerExists)
                 return; //exit from the loop if we have a blocker exist by setting the flag to true
                 for (let i = 0; i < keys.length; i++) {
                     var key = keys[i];
                     console.log(key, " : ", employee[key]);
                 }
             } else {
-                console.log("Name :",employee.employee_name);
+                //console.log("Name :",employee.employee_name);
             }
         //console.log(element.key, ", ", element.value);
         });
