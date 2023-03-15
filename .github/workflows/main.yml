@@ -1,1 +1,17 @@
+name: workflow trigged by merge
+on:
+  pull_request:
+    types:
+      - closed
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Trigger another workflow from different repository
+        run: |
+          curl -X POST https://api.github.com/repos/madhavirkl84/CustomActionTest/dispatches \
+          -H 'Accept: application/vnd.github.everest-preview+json' \
+          -u ${{ secrets.MY_TOKEN }} \
+          --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
+      - uses: actions/checkout@v3      
