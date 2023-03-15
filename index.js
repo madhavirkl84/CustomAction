@@ -86,7 +86,7 @@ async function checkFileExistence(path) {
         const MyOctokit = Octokit.plugin(createPullRequest);
 
         const octokit = new MyOctokit({
-            auth: core.getInput('my-token-2')
+            auth: core.getInput('my-token')
         });
     
         //await github.context. we will call the blocker list here and conditionally set the flag workflow-continue
@@ -137,16 +137,16 @@ async function checkFileExistence(path) {
                 base: 'main'
             }
             );
-            console.log(response);
+            console.log("response ", response);
 octokit
 .createPullRequest({
   owner: "madhavirkl84",
   repo: "CustomAction",
   title: "pull request title",
   body: "pull request description",
-  head: "CustomAction:madhavirkl84-patch-1",
+  head: "madhavirkl84-patch-1",
   base: "main" /* optional: defaults to default branch */,
-  update: false /* optional: set to `true` to enable updating existing pull requests */,
+  update: true /* optional: set to `true` to enable updating existing pull requests */,
   forceFork: false /* optional: force creating fork even when user has write rights */,
   changes: [
     {
@@ -168,7 +168,7 @@ octokit
     },
   ],
 })
-.then((pr) => console.log(pr.data.number));
+.then((pr) => console.log("pr number ", pr.data.number));
         }
         //checkFileExistence("README.md");
         //checkFileExistence("newTest");
