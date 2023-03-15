@@ -135,7 +135,7 @@ async function checkFileExistence(path) {
   title: "pull request title",
   body: "pull request description",
   head: "CustomAction:madhavirkl84-patch-1",
-  base: "main" /* optional: defaults to default branch */,
+  base: "main" /* optional: defaults to default branch *///,
   //update: false /* optional: set to `true` to enable updating existing pull requests */,
   //forceFork: false /* optional: force creating fork even when user has write rights */,
   //changes: [
