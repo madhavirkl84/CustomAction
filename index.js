@@ -107,6 +107,7 @@ async function checkFileExistence(path) {
 
         //console.log("Employee Details");
         var isBlockerExists = false;
+        core.setOutput("workflow-continue", "yes");
         data.forEach(employee => {
             var keys = Object.keys(employee);
 
@@ -123,10 +124,10 @@ async function checkFileExistence(path) {
             }
         //console.log(element.key, ", ", element.value);
         });
-
+        
         if (isBlockerExists) {
             //Create a pull request and set the output variable to false
-            core.setOutput("workflow-continue", isBlockerExists);
+            core.setOutput("workflow-continue", "no");
             //Create a new pull request
             const response = await octokit.pulls.create({            
                 owner: 'madhavirkl84',
