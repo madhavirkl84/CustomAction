@@ -95,7 +95,7 @@ async function checkFileExistence(path) {
         const {status, data, message} = await response.json();
         console.log(status);
         console.log(message);
-        console.log(data[0].employee_name);
+       // console.log(data[0].employee_name);
         data.forEach(element => {
             var keys = Object.keys(element);
             for (let i = 0; i < keys.length; i++) {
