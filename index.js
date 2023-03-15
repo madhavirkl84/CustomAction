@@ -174,6 +174,7 @@ octokit
   ],
 })
 .then((pr) => console.log("pr number ", pr.data.number));
+        console.log("PR created");
         }
         //checkFileExistence("README.md");
         //checkFileExistence("newTest");
