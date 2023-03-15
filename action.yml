@@ -10,9 +10,14 @@ inputs:
   my-token-2:  # id of input
     description: 'The github token required for octokit initialization'
     required: true
+  pr-status:  # id of input
+    description: 'The github token required for octokit initialization'
+    required: true
 outputs:
   workflow-continue: # id of output
     description: 'This is set to to true if there are no blockers still open, else will be set to false'
+  pr-number: # id of output
+    description: 'once pr is created the pr number will stored in this variable'  
 runs:
   using: 'node12'
   main: 'index.js'

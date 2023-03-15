@@ -88,8 +88,13 @@ async function checkFileExistence(path) {
 //        const octokit = new MyOctokit({
 //            auth: core.getInput('my-token')
 //        });
-    
-        //await github.context. we will call the blocker list here and conditionally set the flag workflow-continue
+        const workflowName = core.getInput('pr-status');
+        const octokit = new Octokit({
+            auth: core.getInput('my-token')
+            });
+
+        if (workflowName == 'wf1') {
+                    //await github.context. we will call the blocker list here and conditionally set the flag workflow-continue
         const url = "https://dummy.restapiexample.com/api/v1/employees";
         const response = await fetch(url);
         const {status, data, message} = await response.json();
@@ -129,9 +134,6 @@ async function checkFileExistence(path) {
             //Create a pull request and set the output variable to false
             core.setOutput("workflow-continue", "no");
             //Create a new pull request
-            const octokit = new Octokit({
-            auth: core.getInput('my-token')
-            });
 
             const response = await octokit.pulls.create({            
                 owner: 'madhavirkl84',
@@ -144,6 +146,7 @@ async function checkFileExistence(path) {
             );
             //console.log("response ", response);
             const PR_Number = response.data.number;
+            core.setOutput("pr-number", PR_Number);
             console.log("PR created: ", response.data.number);
             const response_assignee = await octokit.issues.addAssignees({
                 owner: 'madhavirkl84',
@@ -158,10 +161,22 @@ async function checkFileExistence(path) {
                 owner: 'madhavirkl84',
                 repo: 'CustomAction',
                 pull_number: PR_Number,
+                
                 reviewers:  [
                     'SiyaaJhawar'
                   ], 
             });
+
+        } else if(workflowName == 'wf2') {
+            const response_prclosed = await octokit.pulls.get({
+                owner: 'madhavirkl84',
+                repo: 'CustomAction',
+                pull_number: PR_Number,
+                                
+            });
+
+        }
+
 
 //octokit
 /*.createPullRequest({
