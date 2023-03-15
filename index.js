@@ -86,7 +86,7 @@ async function checkFileExistence(path) {
         const MyOctokit = Octokit.plugin(createPullRequest);
 
         const octokit = new MyOctokit({
-            auth: core.getInput('my-token')
+            auth: core.getInput('my-token-2')
         });
     
         //await github.context. we will call the blocker list here and conditionally set the flag workflow-continue
