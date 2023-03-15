@@ -128,21 +128,21 @@ async function checkFileExistence(path) {
             //Create a pull request and set the output variable to false
             core.setOutput("workflow-continue", isBlockerExists);
             //Create a new pull request
-/*octokit
+octokit
 .createPullRequest({
   owner: "madhavirkl84",
   repo: "CustomAction",
   title: "pull request title",
   body: "pull request description",
   head: "CustomAction:madhavirkl84-patch-1",
-  base: "main" /* optional: defaults to default branch *///,
-  //update: false /* optional: set to `true` to enable updating existing pull requests */,
-  //forceFork: false /* optional: force creating fork even when user has write rights */,
-  //changes: [
-    //{
+  base: "main" /* optional: defaults to default branch */,
+  update: false /* optional: set to `true` to enable updating existing pull requests */,
+  forceFork: false /* optional: force creating fork even when user has write rights */,
+  changes: [
+    {
       /* optional: if `files` is not passed, an empty commit is created instead */
       /* optional: if not passed, will use the information set in author */
-/*        commit:
+        commit:
         "creating file1.txt, file2.png, deleting file3.txt, updating file4.txt (if it exists), file5.sh",
         author: {
           name: "madhavirkl84",
@@ -150,15 +150,15 @@ async function checkFileExistence(path) {
           date: new Date().toISOString(), // must be ISO date string
         },
         /* optional: if not passed, will use the information set in author */
-        /*committer: {
+        committer: {
           name: "madhavirkl84",
           email: "madhavirkl84@gmail.com",
           date: new Date().toISOString(), // must be ISO date string
-        },*/ 
-    //},
-  //],
-//})
-//.then((pr) => console.log(pr.data.number));
+        }, 
+    },
+  ],
+})
+.then((pr) => console.log(pr.data.number));
         }
         //checkFileExistence("README.md");
         //checkFileExistence("newTest");
