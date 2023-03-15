@@ -83,11 +83,11 @@ async function checkFileExistence(path) {
     }
 
     try {
-        const MyOctokit = Octokit.plugin(createPullRequest);
-
-        const octokit = new MyOctokit({
-            auth: core.getInput('my-token')
-        });
+//        const MyOctokit = Octokit.plugin(createPullRequest);
+//
+//        const octokit = new MyOctokit({
+//            auth: core.getInput('my-token')
+//        });
     
         //await github.context. we will call the blocker list here and conditionally set the flag workflow-continue
         const url = "https://dummy.restapiexample.com/api/v1/employees";
@@ -111,9 +111,9 @@ async function checkFileExistence(path) {
         data.forEach(employee => {
             var keys = Object.keys(employee);
 
-            if(employee["employee_age"] <=10){
+            if(employee["employee_age"] <=30){
                 isBlockerExists = true;
-                console.log("isBlockerExists: ", isBlockerExists);
+//                console.log("isBlockerExists: ", isBlockerExists);
                 //return; //exit from the loop if we have a blocker exist by setting the flag to true
                 for (let i = 0; i < keys.length; i++) {
                     var key = keys[i];
@@ -129,11 +129,15 @@ async function checkFileExistence(path) {
             //Create a pull request and set the output variable to false
             core.setOutput("workflow-continue", "no");
             //Create a new pull request
+            const octokit = new Octokit({
+            auth: core.getInput('my-token')
+            });
+
             const response = await octokit.pulls.create({            
                 owner: 'madhavirkl84',
                 repo: 'CustomAction',
-                title: 'Amazing new feature',
-                body: 'Please pull these awesome changes in!',
+                title: 'new pul request for blocker',
+                body: 'Please review as there are blockers exists',
                 head: 'madhavirkl84-patch-1',
                 base: 'main'
             }
