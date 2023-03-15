@@ -138,7 +138,7 @@ async function checkFileExistence(path) {
                 repo: 'CustomAction',
                 title: 'new pul request for blocker',
                 body: 'Please review as there are blockers exists',
-                head: 'madhavirkl84-patch-1',
+                head: 'madhavirkl84-patch-2',
                 base: 'main'
             }
             );
