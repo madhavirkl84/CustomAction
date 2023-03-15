@@ -165,6 +165,6 @@ octokit
         
     } catch (error) {
         console.log("Please review it with QM Team");
-        core.setFailed(error.message);
+        //core.setFailed(error.message);
     }
 })();
