@@ -182,7 +182,8 @@ octokit
         //checkFileExistence("LICENSE");
         
     } catch (error) {
-        console.log("Please review it with QM Team");
-        //core.setFailed(error.message);
+        //console.log("Please review it with QM Team");
+        console.log(error);
+        core.setFailed(error.message);
     }
 })();
