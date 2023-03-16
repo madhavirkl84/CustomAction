@@ -7,8 +7,9 @@ jobs:
   build:
     permissions: write-all
     runs-on: ubuntu-latest
-
+    environment: Dev
     steps:
+       
       - name: Trigger another workflow from different repository
         run: |
           curl -XPOST -u "${{ secrets.MY_USER_NAME}}:${{secrets.MY_TOKEN_REPO}}" \
@@ -17,3 +18,4 @@ jobs:
           https://api.github.com/repos/madhavirkl84/CustomActionTest/dispatches \
           --data '{"event_type": "PR closed", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
       - uses: actions/checkout@v3      
+        
