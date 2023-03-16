@@ -17,8 +17,9 @@ jobs:
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
       - name: Trigger another workflow from different repository
         run: |
-          curl -X POST https://api.github.com/repos/madhavirkl84/CustomActionTest/dispatches \
-          -H 'Accept: application/vnd.github.everest-preview+json' \
-          -H "Authorization: Bearer ${{ secrets.MY_TOKEN }}"\
-          --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
+          curl -XPOST -u "${{ secrets.MY_USER_NAME}}:${{secrets.MY_TOKEN}}" \
+          -H "Accept: application/vnd.github.everest-preview+json" \
+          -H "Content-Type: application/json" \
+          https://api.github.com/repos/madhavirkl84/CustomActionTest/dispatches \
+          --data '{"event_type": "PR closed"}'
       - uses: actions/checkout@v3      
