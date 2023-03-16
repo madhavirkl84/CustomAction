@@ -15,5 +15,5 @@ jobs:
           -H "Accept: application/vnd.github.everest-preview+json" \
           -H "Content-Type: application/json" \
           https://api.github.com/repos/madhavirkl84/CustomActionTest/dispatches \
-          --data '{"event_type": "PR closed"}'
+          --data '{"event_type": "PR closed", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
       - uses: actions/checkout@v3      
