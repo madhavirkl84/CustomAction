@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Trigger another workflow from different repository
         run: |
-          curl -XPOST -u "${{ secrets.MY_USER_NAME}}:${{secrets.MY_TOKEN}}" \
+          curl -XPOST -u "${{ secrets.MY_USER_NAME}}:${{secrets.MY_TOKEN_REPO}}" \
           -H "Accept: application/vnd.github.everest-preview+json" \
           -H "Content-Type: application/json" \
           https://api.github.com/repos/madhavirkl84/CustomActionTest/dispatches \
