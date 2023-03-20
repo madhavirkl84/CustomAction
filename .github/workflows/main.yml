@@ -7,7 +7,6 @@ jobs:
   build:
     permissions: write-all
     runs-on: ubuntu-latest
-    environment: Dev
     steps:
        
       - name: Trigger another workflow from different repository
