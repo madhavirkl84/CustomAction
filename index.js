@@ -116,7 +116,7 @@ async function checkFileExistence(path) {
         data.forEach(employee => {
             var keys = Object.keys(employee);
 
-            if(employee["employee_age"] <=30){
+            if(employee["employee_age"] <=10){
                 isBlockerExists = true;
 //                console.log("isBlockerExists: ", isBlockerExists);
                 //return; //exit from the loop if we have a blocker exist by setting the flag to true
