@@ -42,7 +42,7 @@ import { createPullRequest } from "octokit-plugin-create-pull-request";
                 isBlockerExists = true;
                 for (let i = 0; i < keys.length; i++) {
                     var key = keys[i];
-                    blockerDetails.concat(employee["employee_name"]);
+                    blockerDetails.concat(employee["employee_name"]).concat('\n');
                 }
             }
         });
