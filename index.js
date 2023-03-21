@@ -48,7 +48,7 @@ import { createPullRequest } from "octokit-plugin-create-pull-request";
         });
         
         if (isBlockerExists) {
-            core.setOutput("workflow-continue", "no");
+            core.setOutput("workflow-continue", "noGo");
             core.setOutput("blockerDetails", blockerDetails);
         }
         
