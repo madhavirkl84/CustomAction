@@ -33,7 +33,7 @@ import { createPullRequest } from "octokit-plugin-create-pull-request";
         });
 
         var isBlockerExists = false;
-        core.setOutput("workflow-continue", "yes");
+        core.setOutput("workflow-continue", "Go");
         var blockerDetails = "";
         data.forEach(employee => {
             var keys = Object.keys(employee);
