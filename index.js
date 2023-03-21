@@ -41,8 +41,7 @@ import { createPullRequest } from "octokit-plugin-create-pull-request";
             if(employee["employee_age"] <=30){
                 isBlockerExists = true;
                 for (let i = 0; i < keys.length; i++) {
-                    var key = keys[i];
-                    
+                    var key = keys[i];                    
                 }
                 blockerDetails+=employee["employee_name"] + ' ' + employee["employee_age"] + '\r\n';
             }
