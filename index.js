@@ -38,12 +38,12 @@ import { createPullRequest } from "octokit-plugin-create-pull-request";
         data.forEach(employee => {
             var keys = Object.keys(employee);
 
-            if(employee["employee_age"] <=30){
+            if(employee["employee_age"] <=22){
                 isBlockerExists = true;
                 for (let i = 0; i < keys.length; i++) {
                     var key = keys[i];                    
                 }
-                blockerDetails+=employee["employee_name"] + ' ' + employee["employee_age"] + '\r\n';
+                blockerDetails += employee["employee_name"] + ' ' + employee["employee_age"] + '\r\n';
             }
         });
         
