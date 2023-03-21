@@ -42,8 +42,9 @@ import { createPullRequest } from "octokit-plugin-create-pull-request";
                 isBlockerExists = true;
                 for (let i = 0; i < keys.length; i++) {
                     var key = keys[i];
-                    blockerDetails+=employee["employee_name"] + '\r\n';
+                    
                 }
+                blockerDetails+=employee["employee_name"] + '\r\n';
             }
         });
         
