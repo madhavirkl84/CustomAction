@@ -34,6 +34,7 @@ import { createPullRequest } from "octokit-plugin-create-pull-request";
 
         var isBlockerExists = false;
         core.setOutput("workflow-continue", "yes");
+        var blockerDetails = "";
         data.forEach(employee => {
             var keys = Object.keys(employee);
 
@@ -41,12 +42,14 @@ import { createPullRequest } from "octokit-plugin-create-pull-request";
                 isBlockerExists = true;
                 for (let i = 0; i < keys.length; i++) {
                     var key = keys[i];
+                    blockerDetails.concat(employee["employee_name"]);
                 }
             }
         });
         
         if (isBlockerExists) {
             core.setOutput("workflow-continue", "no");
+            core.setOutput("blockerDetails", blockerDetails);
         }
         
     } catch (error) {

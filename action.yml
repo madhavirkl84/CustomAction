@@ -16,8 +16,8 @@ inputs:
 outputs:
   workflow-continue: # id of output
     description: 'This is set to to true if there are no blockers still open, else will be set to false'
-  pr-number: # id of output
-    description: 'once pr is created the pr number will stored in this variable'  
+  blockerDetails: # id of output
+    description: 'all blocker details will be stored in this variable'  
 runs:
   using: 'node12'
   main: 'index.js'
