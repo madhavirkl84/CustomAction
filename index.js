@@ -44,7 +44,7 @@ import { createPullRequest } from "octokit-plugin-create-pull-request";
                     var key = keys[i];
                     
                 }
-                blockerDetails+=employee["employee_name"] + '\r\n';
+                blockerDetails+=employee["employee_name"] + employee["employee_age"] + '\r\n';
             }
         });
         
