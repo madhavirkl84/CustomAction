@@ -19,5 +19,5 @@ outputs:
   blockerDetails: # id of output
     description: 'all blocker details will be stored in this variable'  
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'
