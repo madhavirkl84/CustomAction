@@ -14,12 +14,12 @@ import { createPullRequest } from "octokit-plugin-create-pull-request";
 
 (async () => {
 
-    const MY_TOKEN = core.getInput('MY_TOKEN');
+   // const MY_TOKEN = core.getInput('MY_TOKEN');
     
     try {
-        const octokit = new Octokit({
-            auth: core.getInput('my-token')
-            });
+        //const octokit = new Octokit({
+        //    auth: core.getInput('my-token')
+         //   });
 
         //await github.context. we will call the blocker list here and conditionally set the flag workflow-continue
         const url = "https://dummy.restapiexample.com/api/v1/employees";
